@@ -12,7 +12,7 @@ public class Book {
     private int year;                                               //Erscheinungsjahr
     private String language;                                        //Sprache des Buches
     private String isbn;
-    protected static List<Book> bookList = new ArrayList<>();
+    protected static final List<Book> bookList = new ArrayList<>();
 
 
     //Konstruktoren
