@@ -39,9 +39,9 @@ public class Book {
             System.out.println("");
             System.out.println("Produktdetails:");
             System.out.println("");
-            System.out.println("Autor: " + book.author + "        " + "Titel: " + book.title);
-            System.out.println("Seitenzahl: " + book.pageNo + "               " + "Sprache: " + book.language);
-            System.out.println("Erscheinungsjahr: " + book.year + "        " + "ISBN: " + book.isbn);
+            System.out.println("Autor: " + book.getAuthor() + "        " + "Titel: " + book.getTitle());
+            System.out.println("Seitenzahl: " + book.getPageNo() + "               " + "Sprache: " + book.getLanguage());
+            System.out.println("Erscheinungsjahr: " + book.getYear() + "        " + "ISBN: " + book.getIsbn());
             System.out.println("--------------------------------------------------------------------");
         }
     }

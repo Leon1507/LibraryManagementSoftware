@@ -7,7 +7,7 @@ public class Customer extends Person {
 
     //Attribute
     private boolean returnedLate;                                   //schonmal eine verspätete Rückgabe
-    private int unpaidFees;                                         //unbezahlte Gebühren
+    private double unpaidFees;                                         //unbezahlte Gebühren
     private List<Book> rentedBooks = new ArrayList<>();             //Momentan ausgeliehene Bücher
 
 
@@ -16,7 +16,7 @@ public class Customer extends Person {
 
     }
 
-    public Customer(String lastName, List<String> firstNames, String country, boolean returnedLate, int unpaidFees){
+    public Customer(String lastName, List<String> firstNames, String country, boolean returnedLate, double unpaidFees){
         super(lastName, firstNames, country);
         this.returnedLate = returnedLate;
         this.unpaidFees = unpaidFees;
@@ -35,7 +35,7 @@ public class Customer extends Person {
         this.returnedLate = returnedLate;
     }
 
-    public int getUnpaidFees() {
+    public double getUnpaidFees() {
         return unpaidFees;
     }
 
