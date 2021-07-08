@@ -7,6 +7,8 @@ public class Main {
         Book.createBook("Robert Kiyosaki", "Rich Dad Poor Dad", 240, 2014, "Deutsch", "978-3-89879-882-2");
         Book.createBook("Timothy Ferriss", "Die 4-Stunden-Woche", 352, 2015, "Deutsch", "978-3-548-37596-0 ");
 
+        Book buch1 = new Book("Robert Kiyosaki", "Rich Dad Poor Dad", 240, 2014, "Deutsch", "978-3-89879-882-2");
+        buch1.bookList.add(buch1);
         Book.printBook();
     }
 }
