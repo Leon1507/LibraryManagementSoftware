@@ -3,11 +3,11 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Author extends Person implements IAuthorService{
+public class Author extends Person {
 
     //Attribute
     private String currentPublisher;                                //Name des Verlages für den der Autor schreibt
-    ArrayList<Book> authoredBooks = new ArrayList<Book>();          //Liste mit Büchern die der Autor geschrieben hat
+    protected ArrayList<Book> authoredBooks = new ArrayList<Book>();          //Liste mit Büchern die der Autor geschrieben hat
 
 
     //Konstruktoren
@@ -40,18 +40,4 @@ public class Author extends Person implements IAuthorService{
         this.authoredBooks = authoredBooks;
     }
 
-    @Override
-    public List<Author> getAuthorsOfMultipleBooks() {
-        return null;
-    }
-
-    @Override
-    public List<Author> getAuthorsFromCountry(String country) {
-        return null;
-    }
-
-    @Override
-    public void addBookToAuthor(Book book, Author author) {
-
-    }
 }
