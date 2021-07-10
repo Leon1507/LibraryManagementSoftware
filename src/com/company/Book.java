@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book implements IBookService{
 
     //Eigenschaften
     private String author;                                          //Autor des Buches
@@ -102,4 +102,13 @@ public class Book {
         this.isbn = isbn;
     }
 
+    @Override
+    public List<Book> getBooksFromYear(int year) {
+        return null;
+    }
+
+    @Override
+    public void addAuthorToBook(Author author, Book book) {
+
+    }
 }
