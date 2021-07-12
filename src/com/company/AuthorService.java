@@ -16,7 +16,10 @@ public class AuthorService implements IAuthorService{
 
     @Override
     public List<Author> getAuthorsOfMultipleBooks() {
-        for(int i = 0; i < Author.)
+        for (Author author:Library.getAuthors()) {
+
+        }
+        for(int i = 0; i <Library.)
 
         return ;
     }
