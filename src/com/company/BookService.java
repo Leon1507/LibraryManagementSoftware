@@ -30,6 +30,6 @@ public class BookService implements IBookService{
 
     @Override
     public void addAuthorToBook(Author author, Book book) {
-        Book.setAuthor(author);
+        //Book.setAuthor(author);
     }
 }

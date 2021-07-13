@@ -20,8 +20,9 @@ public class AuthorService implements IAuthorService{
     public List<Author> getAuthorsOfMultipleBooks() {
         List<Author> multipleBooks = new ArrayList<Author>();
         for (Author author:Library.getAuthors()) {
-            //if()
-
+            if(author.getAuthoredBooks().size()>1){
+                multipleBooks.add(author);
+            }
         }
         return multipleBooks;
     }

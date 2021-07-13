@@ -8,7 +8,7 @@ public class Book {
 
     //Eigenschaften
     //private String author;                                          //Autor des Buches
-    public List<Author> author = new ArrayList<Author>();                       //Liste um mehrere Autoren zum Buch hinzuzufügen
+    private List<Author> author = new ArrayList<Author>();          //Liste um mehrere Autoren zum Buch hinzuzufügen
     private String title;                                           //Buchtitle
     private int pageNo;                                             //Anzahl der Buchseiten
     private int year;                                               //Erscheinungsjahr
