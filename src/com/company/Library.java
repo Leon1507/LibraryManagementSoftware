@@ -21,6 +21,8 @@ public class Library  implements ILibrary {
     //Methoden
 
 
+    
+    //Getter & Setter
     public static List<Book> getBooks() {
         return books;
     }
@@ -45,6 +47,7 @@ public class Library  implements ILibrary {
         Library.customers = customers;
     }
 
+    //Methoden aus dem Interface
     @Override
     public void addBook(Book book) {
 
