@@ -2,12 +2,14 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.company.*;
 
-public class Book implements IBookService{
+public class Book {
 
     //Eigenschaften
-    private String author;                                          //Autor des Buches
-    private String title;                                           //BUchtitle
+    //private String author;                                          //Autor des Buches
+    public List<Author> author = new ArrayList<Author>();                       //Liste um mehrere Autoren zum Buch hinzuzufügen
+    private String title;                                           //Buchtitle
     private int pageNo;                                             //Anzahl der Buchseiten
     private int year;                                               //Erscheinungsjahr
     private String language;                                        //Sprache des Buches
@@ -16,7 +18,7 @@ public class Book implements IBookService{
 
 
     //Konstruktoren
-    public Book (String author, String title, int pageNo, int year, String language, String isbn){
+    public Book (List<Author> author, String title, int pageNo, int year, String language, String isbn){
         this.author = author;
         this.title = title;
         this.pageNo = pageNo;
@@ -28,9 +30,10 @@ public class Book implements IBookService{
 
     //Methoden
     //Erstellen eines neuen Buches
-    public static void createBook(String author, String title, int pageNo, int year, String language, String isbn){
+    public static void createBook(List<Author> author, String title, int pageNo, int year, String language, String isbn){
         Book book = new Book(author, title, pageNo, year, language, isbn);
         bookList.add(book);
+
     }
 
     //Ausgabe aller Bücher
@@ -46,6 +49,14 @@ public class Book implements IBookService{
         }
     }
 
+    public List<Author> getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(List<Author> author) {
+        this.author = author;
+    }
+
     public List<Book> getBookList() {
         return bookList;
     }
@@ -54,13 +65,13 @@ public class Book implements IBookService{
         bookList = bookList;
     }
 
-    public String getAuthor() {
+    /*public String getAuthor() {
         return author;
     }
 
     public void setAuthor(String author) {
         this.author = author;
-    }
+    }*/
 
     public String getTitle() {
         return title;
@@ -102,13 +113,4 @@ public class Book implements IBookService{
         this.isbn = isbn;
     }
 
-    @Override
-    public List<Book> getBooksFromYear(int year) {
-        return null;
-    }
-
-    @Override
-    public void addAuthorToBook(Author author, Book book) {
-
-    }
 }
