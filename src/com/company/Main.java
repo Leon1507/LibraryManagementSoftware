@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Collections;
-import com.company.*;
 
 
 public class Main {

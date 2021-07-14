@@ -12,16 +12,13 @@ public class Library  implements ILibrary {
 
     //Konstruktoren
     public Library(){
-        //Wie soll mithilfe des Konstruktors eine leere Liste initialisiert werden?
-        //setAuthors();
-        //setBooks();
-        //setCustomers();
+
     }
 
     //Methoden
 
 
-    
+
     //Getter & Setter
     public static List<Book> getBooks() {
         return books;

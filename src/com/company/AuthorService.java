@@ -32,7 +32,7 @@ public class AuthorService implements IAuthorService{
     public List<Author> getAuthorsFromCountry(String country) {
         List<Author> sameCountry = new ArrayList<Author>();
         for (Author author:Library.getAuthors()) {
-            if(author.country.equals(country)){
+            if(author.getCountry().equals(country)){
                 sameCountry.add(author);
             }
         }
@@ -43,6 +43,11 @@ public class AuthorService implements IAuthorService{
     //Fügt der Liste authoredBook des übergebenen Autors ein Buch hinzu
     @Override
     public void addBookToAuthor(Book book, Author author) {
+        //mit for each schleife überprüfen ob der Autor bereits vorhanden ist
+        for (Author author:book.getAuthor()) {
+
+        }
+        if()
         author.authoredBooks.add(book);
     }
 
