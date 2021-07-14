@@ -6,9 +6,9 @@ import java.util.List;
 public class Person {
 
     //Eigenschaften
-    String lastName;
-    List<String> firstNames = new ArrayList<String>();
-    String country;
+    private String lastName;
+    private List<String> firstNames = new ArrayList<String>();
+    private String country;
 
 
     //Konstruktor
@@ -22,4 +22,30 @@ public class Person {
         this.country = country;
     }
 
+    //Methoden
+
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getFirstNames() {
+        return firstNames;
+    }
+
+    public void setFirstNames(List<String> firstNames) {
+        this.firstNames = firstNames;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }

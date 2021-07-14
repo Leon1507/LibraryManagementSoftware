@@ -32,7 +32,7 @@ public class AuthorService implements IAuthorService{
     public List<Author> getAuthorsFromCountry(String country) {
         List<Author> sameCountry = new ArrayList<Author>();
         for (Author author:Library.getAuthors()) {
-            if(author.country.equals(country)){
+            if(author.getCountry().equals(country)){
                 sameCountry.add(author);
             }
         }
