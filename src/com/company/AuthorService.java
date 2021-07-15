@@ -43,7 +43,12 @@ public class AuthorService implements IAuthorService{
     //Fügt der Liste authoredBook des übergebenen Autors ein Buch hinzu
     @Override
     public void addBookToAuthor(Book book, Author author) {
-        author.authoredBooks.add(book);
+        //mit for each schleife überprüfen ob der Autor bereits vorhanden ist
+        /*for (Author author:book.getAuthor()) {
+
+        }
+        if()
+        author.authoredBooks.add(book);*/
     }
 
 }
