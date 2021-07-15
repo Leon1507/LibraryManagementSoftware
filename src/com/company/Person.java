@@ -22,12 +22,9 @@ public class Person {
         this.country = country;
     }
 
-<<<<<<< HEAD
+
     //Methoden
 
-
-=======
->>>>>>> 62e52cb80a99513988ae0576d7f0fcf5a5b7be24
     public String getLastName() {
         return lastName;
     }
