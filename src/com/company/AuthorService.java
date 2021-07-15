@@ -44,11 +44,11 @@ public class AuthorService implements IAuthorService{
     @Override
     public void addBookToAuthor(Book book, Author author) {
         //mit for each schleife überprüfen ob der Autor bereits vorhanden ist
-        for (Author author:book.getAuthor()) {
+        /*for (Author author:book.getAuthor()) {
 
         }
         if()
-        author.authoredBooks.add(book);
+        author.authoredBooks.add(book);*/
     }
 
 }
