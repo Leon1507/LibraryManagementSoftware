@@ -1,9 +1,5 @@
 package com.company;
 
-import com.company.Book;
-import com.company.Author;
-import com.company.Customer;
-
 public interface ILibrary {
 
     void addBook(Book book);

@@ -8,7 +8,7 @@ public class Customer extends Person {
     //Attribute
     private boolean returnedLate;                                   //schonmal eine verspätete Rückgabe
     private double unpaidFees;                                         //unbezahlte Gebühren
-    private List<Book> rentedBooks = new ArrayList<>();             //Momentan ausgeliehene Bücher
+    private List<com.company.Book> rentedBooks = new ArrayList<>();             //Momentan ausgeliehene Bücher
 
 
     //Konstruktoren
@@ -43,11 +43,11 @@ public class Customer extends Person {
         this.unpaidFees = unpaidFees;
     }
 
-    public List<Book> getRentedBooks() {
+    public List<com.company.Book> getRentedBooks() {
         return rentedBooks;
     }
 
-    public void setRentedBooks(List<Book> rentedBooks) {
+    public void setRentedBooks(List<com.company.Book> rentedBooks) {
         this.rentedBooks = rentedBooks;
     }
 }

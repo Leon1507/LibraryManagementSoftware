@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookService implements IBookService{
+public class BookService implements com.company.IBookService {
 
     //Attribute
 
@@ -17,9 +17,9 @@ public class BookService implements IBookService{
 
 
     @Override
-    public List<Book> getBooksFromYear(int year) {
-        List<Book> booksSameYear = new ArrayList<Book>();
-        for (Book book:Library.getBooks()) {
+    public List<com.company.Book> getBooksFromYear(int year) {
+        List<com.company.Book> booksSameYear = new ArrayList<com.company.Book>();
+        for (com.company.Book book: com.company.Library.getBooks()) {
             if(book.getYear() == year){
                 booksSameYear.add(book);
             }
@@ -29,7 +29,7 @@ public class BookService implements IBookService{
 
 
     @Override
-    public void addAuthorToBook(Author author, Book book) {
+    public void addAuthorToBook(com.company.Author author, com.company.Book book) {
         //Book.setAuthor(author);
     }
 }

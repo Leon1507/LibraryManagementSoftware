@@ -1,9 +1,7 @@
 package com.company;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
-import com.company.Author;
 
 public class AuthorService implements IAuthorService{
 

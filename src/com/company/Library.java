@@ -7,7 +7,7 @@ public class Library  implements ILibrary {
 
     //Attribute
     protected static List<Book> books = new ArrayList<Book>();
-    protected static List<Author> authors = new ArrayList<Author>();
+    protected static List<com.company.Author> authors = new ArrayList<com.company.Author>();
     protected static List<Customer> customers = new ArrayList<Customer>();
 
     //Konstruktoren
@@ -28,11 +28,11 @@ public class Library  implements ILibrary {
         Library.books = books;
     }
 
-    public static List<Author> getAuthors() {
+    public static List<com.company.Author> getAuthors() {
         return authors;
     }
 
-    public static void setAuthors(List<Author> authors) {
+    public static void setAuthors(List<com.company.Author> authors) {
         Library.authors = authors;
     }
 
@@ -56,12 +56,12 @@ public class Library  implements ILibrary {
     }
 
     @Override
-    public void addAuthor(Author author) {
+    public void addAuthor(com.company.Author author) {
 
     }
 
     @Override
-    public void removeAuthor(Author author) {
+    public void removeAuthor(com.company.Author author) {
 
     }
 

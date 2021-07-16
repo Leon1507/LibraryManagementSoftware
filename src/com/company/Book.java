@@ -7,7 +7,7 @@ public class Book {
 
     //Eigenschaften
     //private String author;                                          //Autor des Buches
-    private List<Author> author = new ArrayList<Author>();          //Liste um mehrere Autoren zum Buch hinzuzufügen
+    private List<com.company.Author> author = new ArrayList<com.company.Author>();          //Liste um mehrere Autoren zum Buch hinzuzufügen
     private String title;                                           //Buchtitle
     private int pageNo;                                             //Anzahl der Buchseiten
     private int year;                                               //Erscheinungsjahr
@@ -17,7 +17,7 @@ public class Book {
 
 
     //Konstruktoren
-    public Book (List<Author> author, String title, int pageNo, int year, String language, String isbn){
+    public Book (List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn){
         this.author = author;
         this.title = title;
         this.pageNo = pageNo;
@@ -29,7 +29,7 @@ public class Book {
 
     //Methoden
     //Erstellen eines neuen Buches
-    public static void createBook(List<Author> author, String title, int pageNo, int year, String language, String isbn){
+    public static void createBook(List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn){
         Book book = new Book(author, title, pageNo, year, language, isbn);
         bookList.add(book);
 
@@ -49,11 +49,11 @@ public class Book {
         }
     }
 
-    public List<Author> getAuthor() {
+    public List<com.company.Author> getAuthor() {
         return author;
     }
 
-    public void setAuthor(List<Author> author) {
+    public void setAuthor(List<com.company.Author> author) {
         this.author = author;
     }
 
