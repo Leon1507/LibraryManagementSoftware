@@ -13,38 +13,42 @@ public class Book {
     private int year;                                                                   //Erscheinungsjahr
     private String language;                                                            //Sprache des Buches
     private String isbn;
+    private BookStatus bookStatus;
+
 
 
     //Konstruktoren
-    public Book (List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn){
+    public Book (List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         this.author = author;
         this.title = title;
         this.pageNo = pageNo;
         this.year = year;
         this.language = language;
         this.isbn = isbn;
+        this.bookStatus = bookStatus;
 
     }
-    public Book (String author, String title, int pageNo, int year, String language, String isbn){
+    public Book (String author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         this.authorfx = author;
         this.title = title;
         this.pageNo = pageNo;
         this.year = year;
         this.language = language;
         this.isbn = isbn;
+        this.bookStatus = bookStatus;
     }
 
     //Methoden
     //Erstellen eines neuen Buches
-    public static void createBook(List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn){
-        Book book = new Book(author, title, pageNo, year, language, isbn);
+    public static void createBook(List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+        Book book = new Book(author, title, pageNo, year, language, isbn, bookStatus);
         Library.setBooks((List<Book>) book);
 
 
     }
 
-    public static void createBookFX(String author, String title, int pageNo, int year, String language, String isbn){
-        Book book = new Book(author, title, pageNo, year, language, isbn);
+    public static void createBookFX(String author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+        Book book = new Book(author, title, pageNo, year, language, isbn, bookStatus);
         Library.setBooks((List<Book>) book);
     }
 
@@ -54,12 +58,14 @@ public class Book {
             System.out.println("");
             System.out.println("Produktdetails:");
             System.out.println("");
-            System.out.println("Autor: " + book.getAuthor() + "        " + "Titel: " + book.getTitle());
+            System.out.println("Autor: " + book.getAuthor());
+            System.out.println("Status: " + book.getBookStatus() + "        " + "Titel: " + book.getTitle());
             System.out.println("Seitenzahl: " + book.getPageNo() + "               " + "Sprache: " + book.getLanguage());
             System.out.println("Erscheinungsjahr: " + book.getYear() + "        " + "ISBN: " + book.getIsbn());
             System.out.println("--------------------------------------------------------------------");
         }
     }
+
 
     public List<com.company.Author> getAuthor() {
         return author;
@@ -120,4 +126,11 @@ public class Book {
         this.isbn = isbn;
     }
 
+    public BookStatus getBookStatus() {
+        return bookStatus;
+    }
+
+    public void setBookStatus(BookStatus bookStatus) {
+        this.bookStatus = bookStatus;
+    }
 }

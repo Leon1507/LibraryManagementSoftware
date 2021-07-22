@@ -1,9 +1,10 @@
-package com.company;
+package Fx;
 
+
+import com.company.Book;
+import com.company.BookStatus;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
-import java.util.List;
 
 public class Controller {
 
@@ -13,16 +14,18 @@ public class Controller {
     @FXML int yearOfPublication = 0;
     @FXML int pageNo = 0;
     @FXML String language = "";
+    @FXML BookStatus bookStatus;
 
 
     public void saveBook(ActionEvent event){
-        Book.createBookFX(author, title, pageNo, yearOfPublication, language, isbn);
+        Book.createBookFX(author, title, pageNo, yearOfPublication, language, isbn, bookStatus);
         title = "";
         author = "";
         isbn = "";
         yearOfPublication = 0;
         pageNo = 0;
         language = "";
+        bookStatus = BookStatus.AUF_LAGER;
     }
 
 
