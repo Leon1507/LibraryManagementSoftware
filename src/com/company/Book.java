@@ -6,14 +6,13 @@ import java.util.List;
 public class Book {
 
     //Eigenschaften
-    //private String author;                                          //Autor des Buches
-    private List<com.company.Author> author = new ArrayList<com.company.Author>();          //Liste um mehrere Autoren zum Buch hinzuzufügen
-    private String title;                                           //Buchtitle
-    private int pageNo;                                             //Anzahl der Buchseiten
-    private int year;                                               //Erscheinungsjahr
-    private String language;                                        //Sprache des Buches
+    private String authorfx;                                                            //Autor des Buches
+    private List<com.company.Author> author = new ArrayList<com.company.Author>();      //Liste um mehrere Autoren zum Buch hinzuzufügen
+    private String title;                                                               //Buchtitle
+    private int pageNo;                                                                 //Anzahl der Buchseiten
+    private int year;                                                                   //Erscheinungsjahr
+    private String language;                                                            //Sprache des Buches
     private String isbn;
-    protected static final List<Book> bookList = new ArrayList<>();
 
 
     //Konstruktoren
@@ -26,19 +25,32 @@ public class Book {
         this.isbn = isbn;
 
     }
+    public Book (String author, String title, int pageNo, int year, String language, String isbn){
+        this.authorfx = author;
+        this.title = title;
+        this.pageNo = pageNo;
+        this.year = year;
+        this.language = language;
+        this.isbn = isbn;
+    }
 
     //Methoden
     //Erstellen eines neuen Buches
     public static void createBook(List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn){
         Book book = new Book(author, title, pageNo, year, language, isbn);
-        bookList.add(book);
+        Library.setBooks((List<Book>) book);
 
 
     }
 
+    public static void createBookFX(String author, String title, int pageNo, int year, String language, String isbn){
+        Book book = new Book(author, title, pageNo, year, language, isbn);
+        Library.setBooks((List<Book>) book);
+    }
+
     //Ausgabe aller Bücher
     public static void printBook(){
-        for (Book book:bookList) {
+        for (Book book:Library.getBooks()) {
             System.out.println("");
             System.out.println("Produktdetails:");
             System.out.println("");
@@ -57,21 +69,16 @@ public class Book {
         this.author = author;
     }
 
-    public List<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        bookList = bookList;
-    }
-
-    /*public String getAuthor() {
+    /*
+    public String getAuthor() {
         return author;
     }
 
     public void setAuthor(String author) {
         this.author = author;
-    }*/
+    }
+
+     */
 
     public String getTitle() {
         return title;

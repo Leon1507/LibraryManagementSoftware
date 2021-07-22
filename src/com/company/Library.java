@@ -25,6 +25,7 @@ public class Library  implements ILibrary {
     }
 
     public static void setBooks(List<Book> books) {
+
         Library.books = books;
     }
 
@@ -47,7 +48,7 @@ public class Library  implements ILibrary {
     //Methoden aus dem Interface
     @Override
     public void addBook(Book book) {
-
+        setBooks((List<Book>) book);
     }
 
     @Override
