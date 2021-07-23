@@ -18,14 +18,14 @@ public class Controller {
 
 
     public void saveBook(ActionEvent event){
-        Book.createBookFX(author, title, pageNo, yearOfPublication, language, isbn, bookStatus);
+        Book.createBookFX(author, title, pageNo, yearOfPublication, language, isbn);
         title = "";
         author = "";
         isbn = "";
         yearOfPublication = 0;
         pageNo = 0;
         language = "";
-        bookStatus = BookStatus.AUF_LAGER;
+
     }
 
 

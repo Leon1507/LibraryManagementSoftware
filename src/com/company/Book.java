@@ -7,7 +7,7 @@ public class Book {
 
     //Eigenschaften
     private String authorfx;                                                            //Autor des Buches
-    private List<com.company.Author> author = new ArrayList<com.company.Author>();      //Liste um mehrere Autoren zum Buch hinzuzufügen
+    private List<com.company.Author> author = new ArrayList<Author>();      //Liste um mehrere Autoren zum Buch hinzuzufügen
     private String title;                                                               //Buchtitle
     private int pageNo;                                                                 //Anzahl der Buchseiten
     private int year;                                                                   //Erscheinungsjahr
@@ -18,7 +18,7 @@ public class Book {
 
 
     //Konstruktoren
-    public Book (List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+    public Book (List<Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         this.author = author;
         this.title = title;
         this.pageNo = pageNo;
@@ -27,29 +27,31 @@ public class Book {
         this.isbn = isbn;
         this.bookStatus = bookStatus;
 
+
     }
-    public Book (String author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
-        this.authorfx = author;
+    public Book (String authorfx, String title, int pageNo, int year, String language, String isbn){
+        this.authorfx = authorfx;
         this.title = title;
         this.pageNo = pageNo;
         this.year = year;
         this.language = language;
         this.isbn = isbn;
-        this.bookStatus = bookStatus;
+
     }
+
 
     //Methoden
     //Erstellen eines neuen Buches
-    public static void createBook(List<com.company.Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+    public static void createBook(List<Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         Book book = new Book(author, title, pageNo, year, language, isbn, bookStatus);
-        Library.setBooks((List<Book>) book);
+        Library.books.add(book);
 
 
     }
 
-    public static void createBookFX(String author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
-        Book book = new Book(author, title, pageNo, year, language, isbn, bookStatus);
-        Library.setBooks((List<Book>) book);
+    public static void createBookFX(String authorfx, String title, int pageNo, int year, String language, String isbn){
+        Book book = new Book(authorfx, title, pageNo, year, language, isbn);
+        Library.books.add(book);
     }
 
     //Ausgabe aller Bücher
