@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class BookService implements com.company.IBookService {
     //Methoden
 
 
-    @Override
+
     public List<com.company.Book> getBooksFromYear(int year) {
         List<com.company.Book> booksSameYear = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
@@ -33,26 +34,38 @@ public class BookService implements com.company.IBookService {
         //Book.setAuthor(author);
     }
 
-    @Override
-    public List<Book> availableBooks() {
+
+    public static List<Book> availableBooks() {
         List<com.company.Book> stateAUF_LAGER = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
             if(book.getBookStatus() == BookStatus.AUF_LAGER){
                 stateAUF_LAGER.add(book);
             }
         }
+        //Ausgabe zum Testen
+        /*for (Book book:stateAUF_LAGER) {
+            System.out.println("Status: " + book.getBookStatus() + "        " + "Title: " + book.getTitle());
+        }
+         */
+
         return stateAUF_LAGER;
 
     }
 
-    @Override
-    public List<Book> getRentedBooksInLanguage(String language) {
+
+    public static List<Book> getRentedBooksInLanguage(String language) {
         List<com.company.Book> stateVerliehen = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
             if(book.getLanguage() == language && book.getBookStatus() == BookStatus.VERLIEHEN){
                 stateVerliehen.add(book);
             }
         }
+        //Ausgabe zum Testen
+        /*for (Book book:stateVerliehen) {
+            System.out.println("Status: " + book.getBookStatus() + "        " + "Title: " + book.getTitle());
+
+        }
+         */
         return stateVerliehen;
 
 

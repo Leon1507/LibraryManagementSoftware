@@ -6,9 +6,10 @@ import java.util.List;
 public class Customer extends Person {
 
     //Attribute
-    private boolean returnedLate;                                   //schonmal eine verspätete Rückgabe
+    private boolean returnedLate;                                      //schonmal eine verspätete Rückgabe
     private double unpaidFees;                                         //unbezahlte Gebühren
-    private List<com.company.Book> rentedBooks = new ArrayList<>();             //Momentan ausgeliehene Bücher
+    private List<com.company.Book> rentedBooks = new ArrayList<>();    //Momentan ausgeliehene Bücher
+    private CustomerStatus customerStatus;
 
 
     //Konstruktoren
@@ -16,10 +17,11 @@ public class Customer extends Person {
 
     }
 
-    public Customer(String lastName, List<String> firstNames, String country, boolean returnedLate, double unpaidFees){
+    public Customer(String lastName, List<String> firstNames, String country, boolean returnedLate, double unpaidFees, CustomerStatus customerStatus){
         super(lastName, firstNames, country);
         this.returnedLate = returnedLate;
         this.unpaidFees = unpaidFees;
+        this.customerStatus = customerStatus;
     }
 
 
@@ -49,5 +51,17 @@ public class Customer extends Person {
 
     public void setRentedBooks(List<com.company.Book> rentedBooks) {
         this.rentedBooks = rentedBooks;
+    }
+
+    public void setUnpaidFees(double unpaidFees) {
+        this.unpaidFees = unpaidFees;
+    }
+
+    public CustomerStatus getCustomerStatus() {
+        return customerStatus;
+    }
+
+    public void setCustomerStatus(CustomerStatus customerStatus) {
+        this.customerStatus = customerStatus;
     }
 }

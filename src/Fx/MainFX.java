@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.util.Collections;
 
 
-public class MainFX extends Application {
+public class    MainFX extends Application {
 
 
     @Override

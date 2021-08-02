@@ -11,7 +11,7 @@ public class Main {
 
         Author RobertKiyosaki = new Author("Kiyosaki", Collections.singletonList("Robert"), "Mainz", "FBV");
         Author TimothyFerriss = new Author("Kiyosaki", Collections.singletonList("Robert"), "Mainz", "FBV");
-        createBook(Collections.singletonList(RobertKiyosaki), "Rich Dad Poor Dad", 240, 2014, "Deutsch", "978-3-89879-882-2", BookStatus.AUF_LAGER);
+        createBook(Collections.singletonList(RobertKiyosaki), "Rich Dad Poor Dad", 240, 2014, "Deutsch", "978-3-89879-882-2", BookStatus.VERLIEHEN);
         createBook(Collections.singletonList(TimothyFerriss), "Die 4-Stunden-Woche", 352, 2015, "Deutsch", "978-3-548-37596-0 ", BookStatus.AUF_LAGER);
 
         Book buch1 = new Book("Robert", "Rich Dad Poor Dad", 240, 2014, "Deutsch", "978-3-89879-882-2");
@@ -21,6 +21,10 @@ public class Main {
         Library.books.add(buch1);
 
         Book.printBook();
-        
+
+
+        //Testing
+        BookService.getRentedBooksInLanguage("Deutsch");
+
     }
 }
