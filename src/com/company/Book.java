@@ -11,14 +11,15 @@ public class Book {
     private String title;                                                               //Buchtitle
     private int pageNo;                                                                 //Anzahl der Buchseiten
     private int year;                                                                   //Erscheinungsjahr
-    private String language;                                                            //Sprache des Buches
+    //private String language;                                                            //Sprache des Buches
+    private Language language;
     private String isbn;
     private BookStatus bookStatus;
 
 
 
     //Konstruktoren
-    public Book (List<Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+    public Book (List<Author> author, String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
         this.author = author;
         this.title = title;
         this.pageNo = pageNo;
@@ -29,7 +30,7 @@ public class Book {
 
 
     }
-    public Book (String authorfx, String title, int pageNo, int year, String language, String isbn){
+    public Book (String authorfx, String title, int pageNo, int year, Language language, String isbn){
         this.authorfx = authorfx;
         this.title = title;
         this.pageNo = pageNo;
@@ -42,14 +43,14 @@ public class Book {
 
     //Methoden
     //Erstellen eines neuen Buches
-    public static void createBook(List<Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+    public static void createBook(List<Author> author, String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
         Book book = new Book(author, title, pageNo, year, language, isbn, bookStatus);
         Library.books.add(book);
 
 
     }
 
-    public static void createBookFX(String authorfx, String title, int pageNo, int year, String language, String isbn){
+    public static void createBookFX(String authorfx, String title, int pageNo, int year, Language language, String isbn){
         Book book = new Book(authorfx, title, pageNo, year, language, isbn);
         Library.books.add(book);
     }
@@ -112,11 +113,11 @@ public class Book {
         this.year = year;
     }
 
-    public String getLanguage() {
+    public Language getLanguage() {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage(Language language) {
         this.language = language;
     }
 

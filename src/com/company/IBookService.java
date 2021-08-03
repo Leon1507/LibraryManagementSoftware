@@ -25,7 +25,7 @@ public interface IBookService {
         }
         return stateAUF_LAGER;
     }
-    static List<Book> getRentedBooksInLanguage(String language){
+    static List<Book> getRentedBooksInLanguage(Language language){
         List<com.company.Book> stateVerliehen = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
             if(book.getLanguage() == language && book.getBookStatus() == BookStatus.VERLIEHEN){
