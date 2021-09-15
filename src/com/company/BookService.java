@@ -17,7 +17,7 @@ public class BookService implements com.company.IBookService {
     //Methoden
 
 
-
+    //Methode aus IBookService
     public List<com.company.Book> getBooksFromYear(int year) {
         List<com.company.Book> booksSameYear = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
@@ -34,7 +34,7 @@ public class BookService implements com.company.IBookService {
         //Book.setAuthor(author);
     }
 
-
+    //Methode aus IBookService
     public static List<Book> availableBooks() {
         List<com.company.Book> stateAUF_LAGER = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
@@ -52,7 +52,7 @@ public class BookService implements com.company.IBookService {
 
     }
 
-
+    //Methode aus IBookService
     public static List<Book> getRentedBooksInLanguage(Language language) {
         List<com.company.Book> stateVerliehen = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {

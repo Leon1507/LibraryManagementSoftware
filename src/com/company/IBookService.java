@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface IBookService {
 
+    //Methode um alle Bücher eines Erscheinungsjahr zu finden
     static List<Book> getBooksFromYear(int year){
         List<com.company.Book> booksSameYear = new ArrayList<Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
@@ -15,7 +16,10 @@ public interface IBookService {
         }
         return booksSameYear;
     }
+
     void addAuthorToBook(Author author, Book book);
+
+    //Methode um alle verfügbaren Bücher zu finden (Status Auf_Lager)
     static List<Book> availableBooks(){
         List<com.company.Book> stateAUF_LAGER = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
@@ -25,6 +29,8 @@ public interface IBookService {
         }
         return stateAUF_LAGER;
     }
+
+    //Methode um alle ausgeliehenen Bücher von einer bestimmten Sprache zu finden (Status Verliehen)
     static List<Book> getRentedBooksInLanguage(Language language){
         List<com.company.Book> stateVerliehen = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
