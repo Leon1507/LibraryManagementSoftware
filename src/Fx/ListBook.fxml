@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
@@ -62,13 +63,28 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <TableView prefHeight="520.0" prefWidth="760.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-               </columns>
-            </TableView>
-         </content></ScrollPane>
+            <VBox prefHeight="520.0" prefWidth="470.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="199.0">
+                     <children>
+                        <TextField prefWidth="76.0" />
+                        <TextField prefWidth="76.0" />
+                        <TextField prefWidth="76.0" />
+                        <TextField prefWidth="76.0" />
+                        <TextField prefWidth="76.0" />
+                        <TextField prefWidth="76.0" />
+                     </children>
+                  </HBox>
+                  <TableView prefHeight="492.0" prefWidth="470.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
    </center>
    <left>
       <Pane prefHeight="200.0" prefWidth="130.0" style="-fx-background-color: #DFE5F0;" BorderPane.alignment="CENTER">
@@ -100,4 +116,7 @@
          </children>
       </Pane>
    </left>
+   <right>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>

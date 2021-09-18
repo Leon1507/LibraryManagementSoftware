@@ -25,6 +25,7 @@ public class Main2 extends Application {
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Library-Manager");
         primaryStage.show();
 
     }
