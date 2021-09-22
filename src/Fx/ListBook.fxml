@@ -14,21 +14,21 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <AnchorPane prefHeight="40.0" style="-fx-background-color: #98BEF6;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" prefWidth="90.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="aktualsieren" AnchorPane.rightAnchor="15.0" />
-            <Button layoutX="510.0" layoutY="7.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Neu" AnchorPane.rightAnchor="270.0" />
-            <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Bearbeiten" AnchorPane.rightAnchor="185.0">
+            <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="90.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="aktualsieren" AnchorPane.rightAnchor="15.0" />
+            <Button layoutX="510.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="50.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Neu" AnchorPane.rightAnchor="270.0" />
+            <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Bearbeiten" AnchorPane.rightAnchor="185.0">
                <opaqueInsets>
                   <Insets right="5.0" />
                </opaqueInsets>
             </Button>
-            <Button layoutX="640.0" layoutY="7.0" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Löschen" AnchorPane.rightAnchor="110.0">
+            <Button layoutX="640.0" layoutY="7.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Löschen" AnchorPane.rightAnchor="110.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -38,54 +38,28 @@
    <top>
       <AnchorPane prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #98BEF6;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="764.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="764.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
                <image>
                   <Image url="@../../../../Downloads/315-menu-2-morph-outline.png" />
                </image>
             </ImageView>
-            <HBox layoutX="303.0" layoutY="5.0">
+            <HBox layoutX="303.0" layoutY="5.0" AnchorPane.rightAnchor="54.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Downloads/19-magnifier-zoom-search-outline.png" />
                      </image>
                   </ImageView>
-                  <ComboBox prefHeight="21.0" prefWidth="150.0" promptText="Spalte auswählen..." style="-fx-background-radius: 10; -fx-background-color: #FFFDFC;">
+                  <ComboBox prefHeight="21.0" prefWidth="150.0" promptText="Spalte auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <TextField prefHeight="23.0" prefWidth="258.0" promptText="Suche..." style="-fx-background-radius: 10; -fx-background-color: #FFFDFC;" />
+                  <TextField prefHeight="23.0" prefWidth="258.0" promptText="Suche..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" />
                </children>
             </HBox>
          </children></AnchorPane>
    </top>
-   <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <content>
-            <VBox prefHeight="520.0" prefWidth="470.0">
-               <children>
-                  <HBox prefHeight="28.0" prefWidth="199.0">
-                     <children>
-                        <TextField prefWidth="76.0" />
-                        <TextField prefWidth="76.0" />
-                        <TextField prefWidth="76.0" />
-                        <TextField prefWidth="76.0" />
-                        <TextField prefWidth="76.0" />
-                        <TextField prefWidth="76.0" />
-                     </children>
-                  </HBox>
-                  <TableView prefHeight="492.0" prefWidth="470.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-         </content>
-      </ScrollPane>
-   </center>
    <left>
       <Pane prefHeight="200.0" prefWidth="130.0" style="-fx-background-color: #DFE5F0;" BorderPane.alignment="CENTER">
          <children>
@@ -105,18 +79,39 @@
                      </font></Label>
                </children>
             </HBox>
-            <HBox layoutX="-1.0" layoutY="81.0" prefHeight="25.0" prefWidth="130.0">
+            <HBox layoutX="15.0" layoutY="81.0" prefHeight="25.0" prefWidth="130.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <padding>
                   <Insets top="5.0" />
                </padding>
+               <children>
+                  <Line endX="23.5" startX="135.0" />
+               </children>
             </HBox>
          </children>
       </Pane>
    </left>
-   <right>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </right>
+   <center>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <content>
+                  <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="570.0" prefWidth="820.0">
+                    <columns>
+                      <TableColumn prefWidth="125.0" text="Titel" />
+                      <TableColumn prefWidth="125.0" text="Autor" />
+                        <TableColumn prefWidth="125.0" text="ISBN" />
+                        <TableColumn prefWidth="75.0" text="Seitenanzahl" />
+                        <TableColumn prefWidth="75.0" text="Erscheinungsjahr" />
+                        <TableColumn prefWidth="75.0" text="Sprache" />
+                        <TableColumn prefWidth="75.0" text="Status" />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
