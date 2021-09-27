@@ -6,6 +6,13 @@ import com.company.BookStatus;
 import com.company.Language;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class Controller {
 
@@ -18,17 +25,37 @@ public class Controller {
     //@FXML String language = "";
     @FXML BookStatus bookStatus;
 
+    Button btnNewBook;
+    Button btnSaveBook;
+    Button btnCancelNewBook;
+    Button btnRefresh;
+    Button btnModifyBook;
+    Button btnDeleteBook;
 
-    public void saveBook(ActionEvent event){
+
+
+    public void ButtonSaveBook(ActionEvent event){
         Book.createBookFX(author, title, pageNo, yearOfPublication, language, isbn);
         title = "";
         author = "";
         isbn = "";
         yearOfPublication = 0;
         pageNo = 0;
-        language = Language.DEUTSCH;
 
     }
 
+    public void btnCancelNewBook() throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("createBook.fxml"));
+        
+        Stage window = (Stage) btnCancelNewBook.getScene().getWindow();
+        window.setScene(new Scene(root, 950, 650));
+    }
+
+    private void btnNewBook() throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("createBook.fxml"));
+        Stage window = (Stage) btnNewBook.getScene().getWindow();
+        window.setScene(new Scene(root, 600, 400));
+
+    }
 
 }
