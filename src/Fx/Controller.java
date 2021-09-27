@@ -34,7 +34,7 @@ public class Controller {
 
 
 
-    public void ButtonSaveBook(ActionEvent event){
+    public void btnSaveBook(ActionEvent event){
         Book.createBookFX(author, title, pageNo, yearOfPublication, language, isbn);
         title = "";
         author = "";
@@ -44,18 +44,19 @@ public class Controller {
 
     }
 
-    public void btnCancelNewBook() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("createBook.fxml"));
-        
-        Stage window = (Stage) btnCancelNewBook.getScene().getWindow();
-        window.setScene(new Scene(root, 950, 650));
-    }
-
     private void btnNewBook() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("createBook.fxml"));
         Stage window = (Stage) btnNewBook.getScene().getWindow();
         window.setScene(new Scene(root, 600, 400));
 
     }
+
+    public void btnCancelNewBook() throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("ListBook.fxml"));
+        Stage window = (Stage) btnCancelNewBook.getScene().getWindow();
+        window.setScene(new Scene(root, 950, 650));
+    }
+
+
 
 }
