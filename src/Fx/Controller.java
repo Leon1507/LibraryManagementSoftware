@@ -14,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.sql.SQLOutput;
+
 public class Controller {
 
     @FXML String title = "";
@@ -44,18 +46,25 @@ public class Controller {
 
     }
 
-    private void btnNewBook() throws Exception {
+    public void btnCancelNewBook() throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("ListBook.fxml"));
+        Stage window = (Stage) btnCancelNewBook.getScene().getWindow();
+        window.setScene(new Scene(root, 950, 650));
+    }
+
+    public void btnNewBook() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("createBook.fxml"));
         Stage window = (Stage) btnNewBook.getScene().getWindow();
         window.setScene(new Scene(root, 600, 400));
 
     }
 
-    public void btnCancelNewBook() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ListBook.fxml"));
-        Stage window = (Stage) btnCancelNewBook.getScene().getWindow();
-        window.setScene(new Scene(root, 950, 650));
+    public void btnRefresh() throws Exception {
+        System.out.println("TEst erfolgreich");
     }
+    
+
+
 
 
 

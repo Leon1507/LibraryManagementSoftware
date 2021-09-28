@@ -21,8 +21,8 @@
    <bottom>
       <AnchorPane prefHeight="40.0" style="-fx-background-color: #98BEF6;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="90.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="aktualsieren" AnchorPane.rightAnchor="15.0" />
-            <Button layoutX="510.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="50.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Neu" AnchorPane.rightAnchor="270.0" />
+            <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnRefresh" prefHeight="15.0" prefWidth="90.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="aktualsieren" AnchorPane.rightAnchor="15.0" />
+            <Button layoutX="510.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnNewBook" prefHeight="15.0" prefWidth="50.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Neu" AnchorPane.rightAnchor="270.0" />
             <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color: #FFFDFC; -fx-background-radius: 10;" text="Bearbeiten" AnchorPane.rightAnchor="185.0">
                <opaqueInsets>
                   <Insets right="5.0" />
