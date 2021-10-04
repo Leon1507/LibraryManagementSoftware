@@ -65,7 +65,7 @@
          <children>
             <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <content>
-                  <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="570.0" prefWidth="700.0">
+                  <TableView fx:id="TableViewTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="570.0" prefWidth="700.0">
                     <columns>
                       <TableColumn fx:id="TableColumnTitle" prefWidth="125.0" style="-fx-background-color: #F0F1F2;" text="Titel" />
                       <TableColumn fx:id="TableColumnAutor" prefWidth="125.0" style="-fx-background-color: #F0F1F2;" text="Autor" />
