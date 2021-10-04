@@ -7,13 +7,13 @@ public enum Language {
     ITALIENISCH("Italienisch"),
     FRANZÖSISCH("Französisch");
 
-    private String label;
+    final private String label;
 
-    Language(String label){
+    private Language(String label){
         this.label = label;
     }
 
-    public String ToString(){
+    public String getName(){
         return label;
     }
 

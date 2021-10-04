@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
 public class ControllerBook implements Initializable {
 
@@ -113,7 +114,7 @@ public class ControllerBook implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(URL url, ResourceBundle rb) {
         //comboBoxLanguage.getItems().addAll(com.company.Language);
         //comboBoxLanguage.getItems().addAll("Deutsch", "Englisch");
 
@@ -124,8 +125,22 @@ public class ControllerBook implements Initializable {
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
         TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
-    }
 
+        Callback<ListView<Language>, ListCell<Language>> cellFactory = (ListView<Language> param) -> new ListCell<Language>() {
+
+            @Override
+
+            protected void updateItem(Language item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (item != null && !empty) {
+
+                    setText(item.getName());
+                }
+            }
+        };
+        // Link: https://titanwolf.org/Network/Articles/Article?AID=ba96913d-d0f7-4f14-abd6-4810b13075db#gsc.tab=0
+    }
 
 
     /*
