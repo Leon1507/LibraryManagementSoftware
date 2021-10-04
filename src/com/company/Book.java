@@ -6,7 +6,7 @@ import java.util.List;
 public class Book {
 
     //Eigenschaften
-    private String authorfx;                                                            //Autor des Buches
+    //private String authorfx;                                                            //Autor des Buches
     private List<com.company.Author> author = new ArrayList<Author>();      //Liste um mehrere Autoren zum Buch hinzuzufügen
     private String title;                                                               //Buchtitle
     private int pageNo;                                                                 //Anzahl der Buchseiten
@@ -30,8 +30,8 @@ public class Book {
 
 
     }
-    public Book (String authorfx, String title, int pageNo, int year, Language language, String isbn){
-        this.authorfx = authorfx;
+    public Book ( String title, int pageNo, int year, Language language, String isbn){
+        //this.authorfx = author;
         this.title = title;
         this.pageNo = pageNo;
         this.year = year;
@@ -50,8 +50,8 @@ public class Book {
 
     }
 
-    public static void createBookFX(String authorfx, String title, int pageNo, int year, Language language, String isbn){
-        Book book = new Book(authorfx, title, pageNo, year, language, isbn);
+    public static void createBookFX(String title, int pageNo, int year, Language language, String isbn){
+        Book book = new Book( title, pageNo, year, language, isbn);
         Library.books.add(book);
     }
 
@@ -85,6 +85,16 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+     */
+    /*
+    public String getAuthorfx() {
+        return authorfx;
+    }
+
+    public void setAuthorfx(String authorfx) {
+        this.authorfx = authorfx;
     }
 
      */
