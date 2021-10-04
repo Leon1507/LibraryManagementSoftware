@@ -82,7 +82,7 @@ public class ControllerBook implements Initializable {
         //author = String.valueOf(TFAuthor.getText());
         isbn = String.valueOf(TFIsbn.getText());
         pageNo = Integer.parseInt(TFPageNo.getText());
-        language = Language.DEUTSCH;
+        language = Language.valueOf(comboBoxLanguage.getValue());
         yearOfPublication = Integer.parseInt(TFYearOfPublication.getText());
         //System.out.println("test1");
 
@@ -115,7 +115,7 @@ public class ControllerBook implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //comboBoxLanguage.getItems().addAll(com.company.Language);
-        comboBoxLanguage.getItems().addAll("Deutsch", "Englisch");
+        //comboBoxLanguage.getItems().addAll("Deutsch", "Englisch");
 
         TableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("authorfx"));
