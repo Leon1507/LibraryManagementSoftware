@@ -7,14 +7,17 @@ public enum Language {
     ITALIENISCH("Italienisch"),
     FRANZÖSISCH("Französisch");
 
-    final private String label;
+    private String value;
 
-    private Language(String label){
-        this.label = label;
+    private Language(String value){
+        this.value = value;
     }
 
     public String getName(){
-        return label;
+        return value;
     }
 
+    @Override public String toString() { return value; }
+
 }
+

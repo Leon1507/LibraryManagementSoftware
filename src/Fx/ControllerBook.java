@@ -6,18 +6,23 @@ package Fx;
 
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import com.company.Book;
+import com.company.BookStatus;
 import com.company.Language;
 import com.company.Library;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 public class ControllerBook implements Initializable {
 
@@ -67,14 +72,17 @@ public class ControllerBook implements Initializable {
     private TextField TFYearOfPublication; // Value injected by FXMLLoader
 
     @FXML // fx:id="comboBoxLanguage"
-    private ComboBox<String> comboBoxLanguage; // Value injected by FXMLLoader
+    private ComboBox<Language> comboBoxLanguage; // Value injected by FXMLLoader
+
+    @FXML
+    private Label label;
 
     public String title;
     private String author;
     private String isbn;
     private int yearOfPublication;
     private int pageNo;
-    private Language language;
+    private String language;
 
 
     public void newBook_Speichern(ActionEvent event){
@@ -83,12 +91,14 @@ public class ControllerBook implements Initializable {
         //author = String.valueOf(TFAuthor.getText());
         isbn = String.valueOf(TFIsbn.getText());
         pageNo = Integer.parseInt(TFPageNo.getText());
-        language = Language.valueOf(comboBoxLanguage.getValue());
+        language = String.valueOf(comboBoxLanguage.getValue());
+        //language = Language.valueOf(comboBoxLanguage.getValue());
         yearOfPublication = Integer.parseInt(TFYearOfPublication.getText());
+
         //System.out.println("test1");
 
         //Objekt aus Datenfelder wird erstellt
-        Book.createBookFX(title, pageNo, yearOfPublication, language, isbn);
+        Book.createBookFX(title, pageNo, yearOfPublication, language, isbn, BookStatus.AUF_LAGER);
 
         //Book.printBook();
         //System.out.println("Test2");
@@ -111,8 +121,6 @@ public class ControllerBook implements Initializable {
     }
 
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //comboBoxLanguage.getItems().addAll(com.company.Language);
@@ -126,21 +134,51 @@ public class ControllerBook implements Initializable {
         TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
         TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
 
-        Callback<ListView<Language>, ListCell<Language>> cellFactory = (ListView<Language> param) -> new ListCell<Language>() {
+
+        //ComboBox Language
+        //comboBoxLanguage.getItems().addAll(Language.values());
+
+        /*
+        Callback<ListView<Language>, ListCell<Language>> cellFactory
+                = (ListView<Language> param) -> new ListCell<Language>() {
 
             @Override
-
             protected void updateItem(Language item, boolean empty) {
                 super.updateItem(item, empty);
-
                 if (item != null && !empty) {
-
                     setText(item.getName());
+
                 }
             }
         };
+
+        ObservableList<Language> list
+                = FXCollections.observableArrayList(Language.values());
+        comboBoxLanguage.getItems().addAll(list);
+        comboBoxLanguage.setButtonCell(cellFactory.call(null));
+        comboBoxLanguage.setCellFactory(cellFactory);
+        comboBoxLanguage.valueProperty().addListener((
+
+                ObservableValue<? extends Language> observable,
+                Language oldValue, Language newValue) -> {
+
+            if (Objects.nonNull(newValue)) {
+                label.setText(newValue.getName());
+            }
+
+        });
+
+         */
+
+
+
+
+
         // Link: https://titanwolf.org/Network/Articles/Article?AID=ba96913d-d0f7-4f14-abd6-4810b13075db#gsc.tab=0
     }
+
+
+
 
 
     /*
