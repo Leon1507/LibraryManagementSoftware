@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import com.company.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.collections.FXCollections?>
-
-
-<?import com.company.Language?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fx.ControllerBook">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fx.ControllerBook">
    <bottom>
       <AnchorPane prefHeight="40.0" style="-fx-background-color: #1E6FD9;" BorderPane.alignment="CENTER">
          <children>
@@ -71,13 +57,13 @@
                <content>
                   <TableView fx:id="TableViewTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="570.0" prefWidth="700.0">
                     <columns>
-                      <TableColumn fx:id="TableColumnTitle" prefWidth="125.0" style="-fx-background-color: #F0F1F2;" text="Titel" />
-                      <TableColumn fx:id="TableColumnAutor" prefWidth="125.0" style="-fx-background-color: #F0F1F2;" text="Autor" />
-                        <TableColumn fx:id="TableColumnISBN" prefWidth="125.0" style="-fx-background-color: #F0F1F2;" text="ISBN" />
-                        <TableColumn fx:id="TableColumnPageNo" prefWidth="75.0" style="-fx-background-color: #F0F1F2;" text="Seitenanzahl" />
-                        <TableColumn fx:id="TableColumnYear" prefWidth="75.0" style="-fx-background-color: #F0F1F2;" text="Erscheinungsjahr" />
-                        <TableColumn fx:id="TableColumnLanguage" prefWidth="100.0" style="-fx-background-color: #F0F1F2;" text="Sprache" />
-                        <TableColumn fx:id="TableColumnStatus" prefWidth="75.0" style="-fx-background-color: #F0F1F2;" text="Status" />
+                      <TableColumn fx:id="TableColumnTitle" prefWidth="125.0" text="Titel" />
+                      <TableColumn fx:id="TableColumnAutor" prefWidth="125.0" text="Autor" />
+                        <TableColumn fx:id="TableColumnISBN" prefWidth="125.0" text="ISBN" />
+                        <TableColumn fx:id="TableColumnPageNo" prefWidth="75.0" text="Seitenanzahl" />
+                        <TableColumn fx:id="TableColumnYear" prefWidth="75.0" style="-fx-background-colr: #F0F1F2;" text="Erscheinungsjahr" />
+                        <TableColumn fx:id="TableColumnLanguage" prefWidth="100.0" text="Sprache" />
+                        <TableColumn fx:id="TableColumnStatus" prefWidth="75.0" text="Status" />
                     </columns>
                   </TableView>
                </content>
@@ -117,11 +103,11 @@
                   <ComboBox fx:id="comboBoxLanguage" prefHeight="27.0" prefWidth="323.0" promptText="Sprache hier auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                           <Language fx:value="DEUTSCH"/>
-                           <Language fx:value="ENGLISCH"/>
-                           <Language fx:value="SPANISCH"/>
-                           <Language fx:value="ITALIENISCH"/>
-                           <Language fx:value="FRANZÖSISCH"/>
+                           <Language fx:value="DEUTSCH" />
+                           <Language fx:value="ENGLISCH" />
+                           <Language fx:value="SPANISCH" />
+                           <Language fx:value="ITALIENISCH" />
+                           <Language fx:value="FRANZÖSISCH" />
                         </FXCollections>
                      </items>
                   </ComboBox>
