@@ -8,9 +8,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-import com.company.Book;
-import com.company.Language;
-import com.company.Library;
+import com.company.*;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,6 +53,9 @@ public class ControllerBook implements Initializable {
 
     @FXML // fx:id="TFAuthor"
     private TextField TFAuthor; // Value injected by FXMLLoader
+    
+    @FXML 
+    private ComboBox<Author> comboBoxAuthor;
 
     @FXML // fx:id="TFPageNo"
     private TextField TFPageNo; // Value injected by FXMLLoader
@@ -68,12 +69,29 @@ public class ControllerBook implements Initializable {
     @FXML // fx:id="comboBoxLanguage"
     private ComboBox<String> comboBoxLanguage; // Value injected by FXMLLoader
 
+    @FXML
+    private TextField AutorVorname;
+
+    @FXML
+    private TextField AutorNachname;
+
+    @FXML
+    private TextField AutorWohnort;
+
+    @FXML
+    private TextField AutorVerlag;
+
+
     public String title;
     private String author;
     private String isbn;
     private int yearOfPublication;
     private int pageNo;
     private Language language;
+    private String autorVorname;
+    private String autorNachname;
+    private String autorWohnort;
+    private String autorVerlag;
 
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -101,15 +119,25 @@ public class ControllerBook implements Initializable {
         pageNo = Integer.parseInt(TFPageNo.getText());
         language = Language.DEUTSCH;
         yearOfPublication = Integer.parseInt(TFYearOfPublication.getText());
-        System.out.println("test1");
+        //System.out.println("test1");
         //System.out.println(title + author + isbn + pageNo + yearOfPublication + language);
-        Book.createBookFX(title, pageNo, yearOfPublication, language, isbn);
+        Book.createBookFX(title, pageNo, yearOfPublication, language, isbn, BookStatus.AUF_LAGER);
         //Book.printBook();
-        System.out.println("Test2");
+        //System.out.println("Test2");
 
         //Setze Daten in TableView
         TableViewTable.setItems(FXCollections.observableList(com.company.Library.getBooks()));
-        System.out.println("Test3");
+        //System.out.println("Test3");
+    }
+
+    public void newAutor_Speichern(ActionEvent event){
+        autorVorname = String.valueOf(AutorVorname.getText());
+        autorNachname = String.valueOf(AutorNachname.getText());
+        autorWohnort = String.valueOf(AutorWohnort.getText());
+        autorVerlag = String.valueOf(AutorVerlag.getText());
+        System.out.println("Übergabe der werte");
+        Author.createAuthor(autorNachname, autorVorname, autorWohnort, autorVerlag);
+        System.out.println("Objekt AAutor erstellt");
     }
 
 
@@ -121,7 +149,7 @@ public class ControllerBook implements Initializable {
         comboBoxLanguage.getItems().addAll("Deutsch", "Englisch");
 
         TableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("authorfx"));
+        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("author"));
         TableColumnISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
         TableColumnPageNo.setCellValueFactory(new PropertyValueFactory<>("pageNo"));
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));

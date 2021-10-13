@@ -15,13 +15,18 @@ public class Author extends Person {
 
     }
 
-    public Author(String lastName, List<String> firstNames, String country, String currentPublisher){
-        super(lastName, firstNames, country);
+    public Author(String lastName, String firstName, String country, String currentPublisher){
+        super(lastName, firstName, country);
         this.currentPublisher = currentPublisher;
     }
 
 
     //Methoden
+
+    public static void createAuthor(String lastName,String firstName, String country, String currentPublisher){
+        Author author = new Author(lastName, firstName, country, currentPublisher);
+        Library.authors.add(author);
+    }
 
 
     public String getCurrentPublisher() {

@@ -30,13 +30,14 @@ public class Book {
 
 
     }
-    public Book ( String title, int pageNo, int year, Language language, String isbn){
+    public Book ( String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
         //this.authorfx = author;
         this.title = title;
         this.pageNo = pageNo;
         this.year = year;
         this.language = language;
         this.isbn = isbn;
+        this.bookStatus = bookStatus;
 
     }
 
@@ -50,8 +51,8 @@ public class Book {
 
     }
 
-    public static void createBookFX(String title, int pageNo, int year, Language language, String isbn){
-        Book book = new Book( title, pageNo, year, language, isbn);
+    public static void createBookFX(String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
+        Book book = new Book(title, pageNo, year, language, isbn, bookStatus);
         Library.books.add(book);
     }
 

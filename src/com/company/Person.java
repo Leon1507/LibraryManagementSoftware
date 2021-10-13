@@ -7,7 +7,7 @@ public class Person {
 
     //Eigenschaften
     private String lastName;
-    private List<String> firstNames = new ArrayList<String>();
+    private String firstName;
     private String country;
 
 
@@ -16,9 +16,9 @@ public class Person {
 
     }
 
-    public Person(String lastName, List<String> firstNames, String country){
+    public Person(String lastName, String firstNames, String country){
         this.lastName = lastName;
-        this.firstNames = firstNames;
+        this.firstName = firstName;
         this.country = country;
     }
 
@@ -33,12 +33,12 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public List<String> getFirstNames() {
-        return firstNames;
+    public String getFirstNames() {
+        return firstName;
     }
 
-    public void setFirstNames(List<String> firstNames) {
-        this.firstNames = firstNames;
+    public void setFirstNames(String firstNames) {
+        this.firstName = firstName;
     }
 
     public String getCountry() {

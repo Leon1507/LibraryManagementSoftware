@@ -17,8 +17,8 @@ public class Customer extends Person {
 
     }
 
-    public Customer(String lastName, List<String> firstNames, String country, boolean returnedLate, double unpaidFees, CustomerStatus customerStatus){
-        super(lastName, firstNames, country);
+    public Customer(String lastName, String firstName, String country, boolean returnedLate, double unpaidFees, CustomerStatus customerStatus){
+        super(lastName, firstName, country);
         this.returnedLate = returnedLate;
         this.unpaidFees = unpaidFees;
         this.customerStatus = customerStatus;
