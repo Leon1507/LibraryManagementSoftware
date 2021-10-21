@@ -9,10 +9,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import com.company.Book;
-import com.company.BookStatus;
-import com.company.Language;
-import com.company.Library;
+import com.company.*;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -62,6 +59,9 @@ public class ControllerBook implements Initializable {
     @FXML // fx:id="TFAuthor"
     private TextField TFAuthor; // Value injected by FXMLLoader
 
+    @FXML
+    private ComboBox<Author> comboBoxAuthor;
+
     @FXML // fx:id="TFPageNo"
     private TextField TFPageNo; // Value injected by FXMLLoader
 
@@ -75,6 +75,18 @@ public class ControllerBook implements Initializable {
     private ComboBox<Language> comboBoxLanguage; // Value injected by FXMLLoader
 
     @FXML
+    private TextField AutorVorname;
+
+    @FXML
+    private TextField AutorNachname;
+
+    @FXML
+    private TextField AutorWohnort;
+
+    @FXML
+    private TextField AutorVerlag;
+
+    @FXML
     private Label label;
 
     public String title;
@@ -83,6 +95,10 @@ public class ControllerBook implements Initializable {
     private int yearOfPublication;
     private int pageNo;
     private String language;
+    private String autorVorname;
+    private String autorNachname;
+    private String autorWohnort;
+    private String autorVerlag;
 
 
     public void newBook_Speichern(ActionEvent event){
@@ -105,7 +121,7 @@ public class ControllerBook implements Initializable {
 
         //Zuordnung der Spalten zu den Variablen im Array
         TableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("authorfx"));
+        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("author"));
         TableColumnISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
         TableColumnPageNo.setCellValueFactory(new PropertyValueFactory<>("pageNo"));
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
@@ -118,6 +134,16 @@ public class ControllerBook implements Initializable {
         TableViewTable.getItems().addAll(com.company.Library.getBooks());
         //System.out.println("Test5");
 
+    }
+
+    public void newAutor_Speichern(ActionEvent event){
+        autorVorname = String.valueOf(AutorVorname.getText());
+        autorNachname = String.valueOf(AutorNachname.getText());
+        autorWohnort = String.valueOf(AutorWohnort.getText());
+        autorVerlag = String.valueOf(AutorVerlag.getText());
+        System.out.println("Übergabe der werte");
+        Author.createAuthor(autorNachname, autorVorname, autorWohnort, autorVerlag);
+        System.out.println("Objekt AAutor erstellt");
     }
 
 
@@ -133,7 +159,6 @@ public class ControllerBook implements Initializable {
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
         TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
-<<<<<<< HEAD
 
 
         //ComboBox Language
@@ -176,8 +201,7 @@ public class ControllerBook implements Initializable {
 
 
         // Link: https://titanwolf.org/Network/Articles/Article?AID=ba96913d-d0f7-4f14-abd6-4810b13075db#gsc.tab=0
-=======
->>>>>>> parent of 056b598 (Felder für Autor hinzugefügt)
+
     }
 
 
