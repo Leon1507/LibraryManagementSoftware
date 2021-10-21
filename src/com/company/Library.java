@@ -1,12 +1,16 @@
 package com.company;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library  implements ILibrary {
 
     //Attribute
-    protected static List<Book> books = new ArrayList<Book>();
+    //protected static List<Book> books = new ArrayList<Book>();
+    static ObservableList<Book> books = FXCollections.observableArrayList();
     protected static List<com.company.Author> authors = new ArrayList<com.company.Author>();
     protected static List<Customer> customers = new ArrayList<Customer>();
 
@@ -25,8 +29,7 @@ public class Library  implements ILibrary {
     }
 
     public static void setBooks(List<Book> books) {
-
-        Library.books = books;
+        Library.books = (ObservableList<Book>) books;
     }
 
     public static List<com.company.Author> getAuthors() {

@@ -31,7 +31,7 @@ public interface IBookService {
     }
 
     //Methode um alle ausgeliehenen Bücher von einer bestimmten Sprache zu finden (Status Verliehen)
-    static List<Book> getRentedBooksInLanguage(Language language){
+    static List<Book> getRentedBooksInLanguage(String language){
         List<com.company.Book> stateVerliehen = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
             if(book.getLanguage() == language && book.getBookStatus() == BookStatus.VERLIEHEN){

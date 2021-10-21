@@ -11,26 +11,27 @@ public class Book {
     private String title;                                                               //Buchtitle
     private int pageNo;                                                                 //Anzahl der Buchseiten
     private int year;                                                                   //Erscheinungsjahr
-    //private String language;                                                            //Sprache des Buches
-    private Language language;
+    private String language;                                                            //Sprache des Buches
+    //private Language language;
     private String isbn;
     private BookStatus bookStatus;
 
 
 
     //Konstruktoren
-    public Book (List<Author> author, String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
+    public Book (List<Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         this.author = author;
         this.title = title;
         this.pageNo = pageNo;
         this.year = year;
         this.language = language;
+        //this.language = language;
         this.isbn = isbn;
         this.bookStatus = bookStatus;
 
 
     }
-    public Book ( String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
+    public Book ( String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         //this.authorfx = author;
         this.title = title;
         this.pageNo = pageNo;
@@ -38,21 +39,23 @@ public class Book {
         this.language = language;
         this.isbn = isbn;
         this.bookStatus = bookStatus;
-
     }
 
 
     //Methoden
     //Erstellen eines neuen Buches
-    public static void createBook(List<Author> author, String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
+
+    public static void createBook(List<Author> author, String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
         Book book = new Book(author, title, pageNo, year, language, isbn, bookStatus);
         Library.books.add(book);
 
 
     }
 
-    public static void createBookFX(String title, int pageNo, int year, Language language, String isbn, BookStatus bookStatus){
-        Book book = new Book(title, pageNo, year, language, isbn, bookStatus);
+
+
+    public static void createBookFX(String title, int pageNo, int year, String language, String isbn, BookStatus bookStatus){
+        Book book = new Book( title, pageNo, year, language, isbn, bookStatus);
         Library.books.add(book);
     }
 
@@ -62,7 +65,7 @@ public class Book {
             System.out.println("");
             System.out.println("Produktdetails:");
             System.out.println("");
-            System.out.println("Autor: " + book.getAuthor());
+            //System.out.println("Autor: " + book.getAuthor());
             System.out.println("Status: " + book.getBookStatus() + "        " + "Titel: " + book.getTitle());
             System.out.println("Seitenzahl: " + book.getPageNo() + "               " + "Sprache: " + book.getLanguage());
             System.out.println("Erscheinungsjahr: " + book.getYear() + "        " + "ISBN: " + book.getIsbn());
@@ -70,7 +73,7 @@ public class Book {
         }
     }
 
-
+    /*
     public List<com.company.Author> getAuthor() {
         return author;
     }
@@ -78,6 +81,8 @@ public class Book {
     public void setAuthor(List<com.company.Author> author) {
         this.author = author;
     }
+
+     */
 
     /*
     public String getAuthor() {
@@ -124,6 +129,15 @@ public class Book {
         this.year = year;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    /*
     public Language getLanguage() {
         return language;
     }
@@ -131,6 +145,8 @@ public class Book {
     public void setLanguage(Language language) {
         this.language = language;
     }
+
+     */
 
     public String getIsbn() {
         return isbn;

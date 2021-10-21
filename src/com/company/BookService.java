@@ -53,7 +53,7 @@ public class BookService implements com.company.IBookService {
     }
 
     //Methode aus IBookService
-    public static List<Book> getRentedBooksInLanguage(Language language) {
+    public static List<Book> getRentedBooksInLanguage(String language) {
         List<com.company.Book> stateVerliehen = new ArrayList<com.company.Book>();
         for (com.company.Book book: com.company.Library.getBooks()) {
             if(book.getLanguage() == language && book.getBookStatus() == BookStatus.VERLIEHEN){
