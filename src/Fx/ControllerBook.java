@@ -133,6 +133,7 @@ public class ControllerBook implements Initializable {
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
         TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
+<<<<<<< HEAD
 
 
         //ComboBox Language
@@ -175,6 +176,8 @@ public class ControllerBook implements Initializable {
 
 
         // Link: https://titanwolf.org/Network/Articles/Article?AID=ba96913d-d0f7-4f14-abd6-4810b13075db#gsc.tab=0
+=======
+>>>>>>> parent of 056b598 (Felder für Autor hinzugefügt)
     }
 
 
