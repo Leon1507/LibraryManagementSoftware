@@ -155,6 +155,7 @@ public class ControllerBook implements Initializable {
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
         TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
+
     }
 
 
