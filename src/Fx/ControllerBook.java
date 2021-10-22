@@ -21,6 +21,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
+import javax.swing.*;
+
+
+
 public class ControllerBook implements Initializable {
 
     @FXML // ResourceBundle that was given to the FXMLLoader
@@ -56,8 +60,8 @@ public class ControllerBook implements Initializable {
     @FXML // fx:id="TFTitle"
     private TextField TFTitle; // Value injected by FXMLLoader
 
-    @FXML // fx:id="TFAuthor"
-    private TextField TFAuthor; // Value injected by FXMLLoader
+    //@FXML // fx:id="TFAuthor"
+    //private TextField TFAuthor; // Value injected by FXMLLoader
 
     @FXML
     private ComboBox<Author> comboBoxAuthor;
@@ -111,29 +115,25 @@ public class ControllerBook implements Initializable {
         //language = Language.valueOf(comboBoxLanguage.getValue());
         yearOfPublication = Integer.parseInt(TFYearOfPublication.getText());
 
-        //System.out.println("test1");
-
         //Objekt aus Datenfelder wird erstellt
         Book.createBookFX(title, pageNo, yearOfPublication, language, isbn, BookStatus.AUF_LAGER);
 
-        //Book.printBook();
-        //System.out.println("Test2");
-
-        //Zuordnung der Spalten zu den Variablen im Array
-        TableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("author"));
-        TableColumnISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
-        TableColumnPageNo.setCellValueFactory(new PropertyValueFactory<>("pageNo"));
-        TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
-        TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
-        TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
-        //System.out.println("test4");
-
-
+        //reset table
+        TableViewTable.getItems().clear();
         //Läd Daten in Tabelle "Bücher"
-        TableViewTable.getItems().addAll(com.company.Library.getBooks());
-        //System.out.println("Test5");
+        PopulateTable();
+        TFTitle.clear();
+        TFIsbn.clear();
+        TFPageNo.clear();
+        TFYearOfPublication.clear();
 
+
+
+
+    }
+
+    public void PopulateTable(){
+        TableViewTable.getItems().addAll(com.company.Library.getBooks());
     }
 
     public void newAutor_Speichern(ActionEvent event){
@@ -141,82 +141,82 @@ public class ControllerBook implements Initializable {
         autorNachname = String.valueOf(AutorNachname.getText());
         autorWohnort = String.valueOf(AutorWohnort.getText());
         autorVerlag = String.valueOf(AutorVerlag.getText());
-        System.out.println("Übergabe der werte");
+        //System.out.println("Übergabe der Werte");
         Author.createAuthor(autorNachname, autorVorname, autorWohnort, autorVerlag);
-        System.out.println("Objekt AAutor erstellt");
+        DefaultComboBoxModel dml= new DefaultComboBoxModel();
+        for (int i = 0; i < Library.getAuthors().size(); i++) {
+            //dml.addElement(Library.getAuthors().get(i).getFirstNames() + " " + Library.getAuthors().get(i).getLastName());
+            comboBoxAuthor.setPromptText(Library.getAuthors().get(i).getFirstNames() + " " + Library.getAuthors().get(i).getLastName());
+        }
+        //System.out.println("Objekt Autor erstellt");
+
+    }
+
+
+    public void Btn_Bearbeiten(ActionEvent event){
+        onEdit();
+    }
+
+    public void onEdit() {
+        // check the table's selected item and get selected item
+        if (TableViewTable.getSelectionModel().getSelectedItem() != null) {
+            Book selectedBook = TableViewTable.getSelectionModel().getSelectedItem();
+            TFTitle.setText(selectedBook.getTitle());
+            TFIsbn.setText(selectedBook.getIsbn());
+            TFPageNo.setText(String.valueOf(selectedBook.getPageNo()));
+            TFYearOfPublication.setText(String.valueOf(selectedBook.getYear()));
+        }
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //comboBoxLanguage.getItems().addAll(com.company.Language);
-        //comboBoxLanguage.getItems().addAll("Deutsch", "Englisch");
-
         TableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("authorfx"));
+        TableColumnAutor.setCellValueFactory(new PropertyValueFactory<>("author"));
         TableColumnISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
         TableColumnPageNo.setCellValueFactory(new PropertyValueFactory<>("pageNo"));
         TableColumnYear.setCellValueFactory(new PropertyValueFactory<>("year"));
         TableColumnLanguage.setCellValueFactory(new PropertyValueFactory<>("language"));
         TableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("bookStatus"));
+        DefaultComboBoxModel dml= new DefaultComboBoxModel();
+        for (int i = 0; i < Library.getAuthors().size(); i++) {
+            //dml.addElement(Library.getAuthors().get(i).getFirstNames() + " " + Library.getAuthors().get(i).getLastName());
+            comboBoxAuthor.setPromptText(Library.getAuthors().get(i).getFirstNames() + " " + Library.getAuthors().get(i).getLastName());
+        }
 
-
-        //ComboBox Language
-        //comboBoxLanguage.getItems().addAll(Language.values());
-
-        /*
-        Callback<ListView<Language>, ListCell<Language>> cellFactory
-                = (ListView<Language> param) -> new ListCell<Language>() {
-
-            @Override
-            protected void updateItem(Language item, boolean empty) {
-                super.updateItem(item, empty);
-                if (item != null && !empty) {
-                    setText(item.getName());
-
-                }
-            }
-        };
-
-        ObservableList<Language> list
-                = FXCollections.observableArrayList(Language.values());
-        comboBoxLanguage.getItems().addAll(list);
-        comboBoxLanguage.setButtonCell(cellFactory.call(null));
-        comboBoxLanguage.setCellFactory(cellFactory);
-        comboBoxLanguage.valueProperty().addListener((
-
-                ObservableValue<? extends Language> observable,
-                Language oldValue, Language newValue) -> {
-
-            if (Objects.nonNull(newValue)) {
-                label.setText(newValue.getName());
-            }
-
-        });
-
-         */
-
-
-
-
-
-        // Link: https://titanwolf.org/Network/Articles/Article?AID=ba96913d-d0f7-4f14-abd6-4810b13075db#gsc.tab=0
 
     }
-
-
 
 
 
     /*
-    public void initialize(URL url, ResourceBundle rb){
-        //ComboBoxLanguage.getItems().setAll(com.company.Language.values());
-        //ComboBox<Language> Language = new ComboBox<>();
-        //Language.getItems().setAll(Language.values());
+        Callback<ListView<Author>, ListCell<Author>> cellFactory = new Callback<ListView<Author>, ListCell<Author>>() {
 
-        ComboBox<Language> cbxStatus = new ComboBox<>();
-        cbxStatus.getItems().setAll(Arrays.asList(Language.values()));
-    }
+            @Override
+            public ListCell<Author> call(ListView<Author> l) {
+                return new ListCell<Author>() {
+
+                    @Override
+                    protected void updateItem(Author item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item == null || empty) {
+                            setGraphic(null);
+                        } else {
+                            setText(item.getFirstNames() + " " + item.getLastName());
+                        }
+                    }
+                } ;
+            }
+        };
+
+        // Just set the button cell here:
+        //comboBoxAuthor.getButtonCell(cellFactory.call(null));
+        comboBoxAuthor.setCellFactory(cellFactory);
 
      */
+
+
+
+
+
 }

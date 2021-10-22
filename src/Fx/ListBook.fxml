@@ -13,7 +13,7 @@
       <AnchorPane prefHeight="40.0" style="-fx-background-color: #1E6FD9;" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="90.0" style="-fx-background-color: #F0F1F2; -fx-background-radius: 10;" text="aktualsieren" AnchorPane.rightAnchor="15.0" />
-            <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color: #F0F1F2; -fx-background-radius: 10;" text="Bearbeiten" AnchorPane.rightAnchor="185.0">
+            <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" onAction="#Btn_Bearbeiten" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color: #F0F1F2; -fx-background-radius: 10;" text="Bearbeiten" AnchorPane.rightAnchor="185.0">
                <opaqueInsets>
                   <Insets right="5.0" />
                </opaqueInsets>
@@ -124,8 +124,7 @@
                   <TextField fx:id="TFPageNo" prefHeight="23.0" prefWidth="258.0" promptText="Seitenanzahl hier eingeben..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <TextField fx:id="TFIsbn" prefHeight="23.0" prefWidth="258.0" promptText="ISBN hier eingeben..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <TextField fx:id="TFYearOfPublication" prefHeight="23.0" prefWidth="258.0" promptText="Erscheinungsjahr hier eingeben..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <ComboBox fx:id="comboBoxLanguage" prefHeight="27.0" prefWidth="323.0" promptText="Sprache hier auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-                  <ComboBox fx:id="comboBoxAuthor" prefHeight="27.0" prefWidth="323.0" promptText="Autor hier auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="1" >
+                  <ComboBox fx:id="comboBoxLanguage" prefHeight="27.0" prefWidth="323.0" promptText="Sprache hier auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
                            <Language fx:value="DEUTSCH" />
@@ -136,6 +135,7 @@
                         </FXCollections>
                      </items>
                   </ComboBox>
+            <ComboBox fx:id="comboBoxAuthor" prefHeight="27.0" prefWidth="323.0" promptText="Autor hier auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                </children>
                <padding>
                   <Insets left="15.0" top="15.0" />

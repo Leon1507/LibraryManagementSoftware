@@ -16,7 +16,7 @@ public class Person {
 
     }
 
-    public Person(String lastName, String firstNames, String country){
+    public Person(String lastName, String firstName, String country){
         this.lastName = lastName;
         this.firstName = firstName;
         this.country = country;
@@ -37,7 +37,7 @@ public class Person {
         return firstName;
     }
 
-    public void setFirstNames(String firstNames) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
