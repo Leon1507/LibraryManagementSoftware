@@ -104,7 +104,8 @@ public class Controller {
      */
 
     public void btnRefresh() throws Exception {
-        System.out.println("TEst erfolgreich");
+
+        System.out.println("Test erfolgreich");
     }
 
 

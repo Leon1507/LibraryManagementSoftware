@@ -10,44 +10,38 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fx.ControllerBook">
    <bottom>
-      <AnchorPane prefHeight="40.0" style="-fx-background-color: #1E6FD9;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="40.0" style="-fx-background-color: #A3CDD9;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="90.0" style="-fx-background-color: #F0F1F2; -fx-background-radius: 10;" text="aktualsieren" AnchorPane.rightAnchor="15.0" />
-            <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" onAction="#Btn_Bearbeiten" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color: #F0F1F2; -fx-background-radius: 10;" text="Bearbeiten" AnchorPane.rightAnchor="185.0">
+            <Button layoutX="710.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnRefresh" prefHeight="15.0" prefWidth="90.0" style="-fx-background-color: #FFFCE6; -fx-background-radius: 10;" text="aktualsieren" textFill="#506ad4" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button layoutX="560.0" layoutY="7.0" mnemonicParsing="false" onAction="#Btn_Bearbeiten" prefHeight="15.0" prefWidth="80.0" style="-fx-background-color: #FFFCE6; -fx-background-radius: 10;" text="Bearbeiten" textFill="#506ad4" AnchorPane.rightAnchor="185.0">
                <opaqueInsets>
                   <Insets right="5.0" />
                </opaqueInsets>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button layoutX="640.0" layoutY="7.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: #F0F1F2; -fx-background-radius: 10;" text="Löschen" AnchorPane.rightAnchor="110.0">
+            <Button layoutX="640.0" layoutY="7.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: #FFFCE6; -fx-background-radius: 10;" text="Löschen" textFill="#506ad4" AnchorPane.rightAnchor="110.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
          </children></AnchorPane>
    </bottom>
    <top>
-      <AnchorPane prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1E6FD9;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #A3CDD9;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="764.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
                <image>
                   <Image url="@../../../../Downloads/315-menu-2-morph-outline.png" />
                </image>
             </ImageView>
-            <HBox layoutX="303.0" layoutY="5.0" AnchorPane.rightAnchor="54.0">
-               <children>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../Downloads/19-magnifier-zoom-search-outline.png" />
-                     </image>
-                  </ImageView>
-                  <ComboBox prefHeight="21.0" prefWidth="150.0" promptText="Spalte auswählen..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;">
-                     <HBox.margin>
-                        <Insets right="5.0" />
-                     </HBox.margin>
-                  </ComboBox>
-                  <TextField prefHeight="23.0" prefWidth="258.0" promptText="Suche..." style="-fx-background-radius: 5; -fx-background-color: #FFFDFC;" />
-               </children>
-            </HBox>
          </children></AnchorPane>
    </top>
    <center>
@@ -87,15 +81,29 @@
             </GridPane>
             <HBox alignment="BOTTOM_RIGHT" layoutY="272.0" prefHeight="27.0" prefWidth="400.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #5C9DF2; -fx-background-radius: 10;" text="Abbrechen" textFill="WHITE">
+                  <Button mnemonicParsing="false" style="-fx-background-color: #F2CC39; -fx-background-radius: 10;" text="Bearbeiten abschließen" textFill="#506ad4">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#newBook_Speichern" style="-fx-background-color: #5C9DF2; -fx-background-radius: 10;" text="Speichern" textFill="WHITE">
+                  <Button mnemonicParsing="false" style="-fx-background-color: #F2CC39; -fx-background-radius: 10;" text="Abbrechen" textFill="#506ad4">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#newBook_Speichern" style="-fx-background-color: #F2CC39; -fx-background-radius: 10;" text="Speichern" textFill="#506ad4">
                      <HBox.margin>
                         <Insets right="40.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
@@ -141,7 +149,7 @@
                   <Insets left="15.0" top="15.0" />
                </padding>
             </GridPane>
-            <Label text="Buch anlegen">
+            <Label text="Buch anlegen" textFill="#506ad4">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -149,7 +157,7 @@
                   <Insets left="20.0" top="15.0" />
                </padding>
             </Label>
-            <GridPane layoutX="18.0" layoutY="329.0" prefHeight="149.0" prefWidth="350.0">
+            <GridPane layoutX="5.0" layoutY="329.0" prefHeight="149.0" prefWidth="363.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="102.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="0.0" prefWidth="0.0" />
@@ -177,10 +185,13 @@
             </GridPane>
             <HBox alignment="BOTTOM_RIGHT" layoutY="492.0" prefHeight="27.0" prefWidth="400.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#newAutor_Speichern" style="-fx-background-color: #5C9DF2; -fx-background-radius: 10;" text="Speichern" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#newAutor_Speichern" style="-fx-background-color: #F2CC39; -fx-background-radius: 10;" text="Speichern" textFill="#506ad4">
                      <HBox.margin>
                         <Insets right="40.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>

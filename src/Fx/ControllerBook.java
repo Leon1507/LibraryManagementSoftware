@@ -187,6 +187,17 @@ public class ControllerBook implements Initializable {
 
     }
 
+    public void btnRefresh() throws Exception {
+        //reset table
+        TableViewTable.getItems().clear();
+        //Läd Daten in Tabelle "Bücher"
+        PopulateTable();
+        TFTitle.clear();
+        TFIsbn.clear();
+        TFPageNo.clear();
+        TFYearOfPublication.clear();
+    }
+
 
 
     /*
