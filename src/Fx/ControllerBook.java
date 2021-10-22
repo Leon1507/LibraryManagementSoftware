@@ -168,6 +168,28 @@ public class ControllerBook implements Initializable {
         }
     }
 
+    public void btn_BearbeitenAbschießen(ActionEvent event){
+        //Temporäre Speicherung der Eingaben
+        title = String.valueOf(TFTitle.getText());
+        //author = String.valueOf(TFAuthor.getText());
+        isbn = String.valueOf(TFIsbn.getText());
+        pageNo = Integer.parseInt(TFPageNo.getText());
+        language = String.valueOf(comboBoxLanguage.getValue());
+        //language = Language.valueOf(comboBoxLanguage.getValue());
+        yearOfPublication = Integer.parseInt(TFYearOfPublication.getText());
+
+        //Objekt wird aufgerufen und angepasst
+
+        //reset table
+        TableViewTable.getItems().clear();
+        //Läd Daten in Tabelle "Bücher"
+        PopulateTable();
+        TFTitle.clear();
+        TFIsbn.clear();
+        TFPageNo.clear();
+        TFYearOfPublication.clear();
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

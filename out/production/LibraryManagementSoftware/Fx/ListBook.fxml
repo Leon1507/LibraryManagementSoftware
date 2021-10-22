@@ -81,7 +81,7 @@
             </GridPane>
             <HBox alignment="BOTTOM_RIGHT" layoutY="272.0" prefHeight="27.0" prefWidth="400.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #F2CC39; -fx-background-radius: 10;" text="Bearbeiten abschließen" textFill="#506ad4">
+                  <Button mnemonicParsing="false" onAction="#btn_BearbeitenAbschießen" style="-fx-background-color: #F2CC39; -fx-background-radius: 10;" text="Bearbeiten abschließen" textFill="#506ad4">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
